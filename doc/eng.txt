@@ -1,0 +1,22 @@
+school 法术系，https://wowpedia.fandom.com/wiki/COMBAT_LOG_EVENT#Spell_School
+class 职业
+talent 天赋
+
+aura 光环，即buff
+spell 法术
+swing 物理攻击
+
+absorb （盾的）吸收
+glance / glancing 物理攻击的偏斜
+blocked 招架
+crushing 碾压
+critical 暴击
+immune 免疫
+dodge 躲闪
+resisted 抵抗
+
+Enchant 附魔
+Gem 珠宝
+
+
+Smite 惩击

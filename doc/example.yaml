@@ -1,0 +1,24 @@
+job_config:
+  clients:
+  # 目标玩家的guid
+  - result_guid: Player-0000-00000000
+    # 目标玩家的名字
+    result_name: 目标玩家名
+    # 从模版中选取一个要替换的目标玩家的名字
+    source_name: 源玩家名
+    #数值调整，每个boss的伤害和治疗数值都会乘以对应数值
+    enhance:
+      NorthrendBeasts: 1.1
+      Jaraxxus: 1.0
+      Twins: 1.0
+      Anubarak: 1.0
+  # 目标玩家的阵营，联盟为Alliance，部落为Horde
+  faction: Alliance
+  # 是否需要英雄模式
+  is_heroic: false
+  # 获取副本ID时采集到的npc的guid
+  raid_instance: Creature-0-4526-649-18798-34816-00002F0145
+  # 模版文件的路径，在拷贝日志并执行clean.py后会生成
+  template: data/template/TOC_0213.yaml
+  #时间轴因子，用于调整时间轴的速度
+  time_factor: 1.0

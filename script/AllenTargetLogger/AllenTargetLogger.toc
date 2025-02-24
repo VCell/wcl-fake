@@ -1,0 +1,8 @@
+## Interface: 30403
+## Title: AllenTargetLogger
+## Notes: .
+## Version: 1.0.0
+## Author: Allen
+## SavedVariables: TargetLoggerData
+TargetLogger.lua
+# 一些注释

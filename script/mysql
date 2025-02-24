@@ -1,0 +1,35 @@
+
+-- 创建数据库
+CREATE DATABASE IF NOT EXISTS `wcl_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- 使用数据库
+USE `wcl_db`;
+
+CREATE TABLE  IF NOT EXISTS `player` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `type` TINYINT NOT NULL DEFAULT 0 COMMENT '1: 自动生成。2：重名占位。3：客户账号',
+    `server` VARCHAR(8) NOT NULL,
+    `faction` VARCHAR(16) NOT NULL DEFAULT '' COMMENT 'Horde Alliance',
+    `name` VARCHAR(50) NOT NULL,
+    `guid` VARCHAR(50) NOT NULL DEFAULT '',
+    `class` VARCHAR(50) NOT NULL DEFAULT '',
+    `active_day` DATE NOT NULL DEFAULT '2024-01-01',
+    `available` BOOLEAN DEFAULT TRUE,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY(server, name)
+);
+
+DELIMITER ;
+
+-- 创建用户
+CREATE USER 'wcl_user'@'localhost' IDENTIFIED BY 'wcl_password';
+
+-- 授予权限
+GRANT SELECT, INSERT, UPDATE, DELETE ON `wcl_db`.* TO 'wcl_user'@'localhost';
+
+-- 刷新权限
+FLUSH PRIVILEGES;
+
+
+
