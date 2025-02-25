@@ -1,11 +1,13 @@
 from typing import Dict
+import os
 
 class Path:
-    TEMPLATE_DIR = 'data/template/'
-    CLEAN_LOG_DIR = 'data/log_clean/'
-    PLAYER_LUA_FILE = 'data/player_lua/AllenTargetLogger.lua'
-    PRE_YAML_DIR = 'data/yaml_pre/'
-    POST_YAML_DIR = 'data/yaml_post/'
+    TEMPLATE_DIR = f'data{os.sep}template{os.sep}'
+    CLEAN_LOG_DIR = f'data{os.sep}log_clean{os.sep}'
+    PLAYER_LUA_FILE = f'data{os.sep}player_lua{os.sep}AllenTargetLogger.lua'
+    PRE_YAML_DIR = f'data{os.sep}yaml_pre{os.sep}'
+    POST_YAML_DIR = f'data{os.sep}yaml_post{os.sep}'
+    HISTORY = f'data{os.sep}history{os.sep}'
 
 class Common:
     FACTION_HORDE = 'Horde'

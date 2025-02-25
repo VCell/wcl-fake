@@ -59,11 +59,14 @@ MySql 5+
 ```bash
 ./preprocess.py -c default.yaml
 ./process.py -c default.yaml
+./postprocess.py -c default.yaml
 ```
 
-在/preprocess.py之后会在default.yaml中填充玩家列表，源日志信息，结果日志信息。
+preprocess.py会根据模版在default.yaml中填充源日志信息，结果日志信息；并从数据库中匹配玩家信息，填充玩家列表和宠物列表
 
-/process.py会根据default.yaml中的信息替换日志内容并生成新的日志
+process.py会根据default.yaml中的信息替换日志内容并生成新的日志
+
+postprocess.py会归档yaml，在数据库中更新背景玩家的cd情况，记录目标玩家的信息
 
 ### 7 完成并上传
 
