@@ -116,7 +116,7 @@ if __name__ == "__main__":
             equip_map[player.source_guid] = [player.equip, player.equip_level]
 
     line_filter = get_filter(conf)
-
+    print(enhance_map)
     with open(conf.source_info.log_path, 'r', encoding='utf-8') as fin, open(output_path, 'w', encoding='utf-8') as fout:
         encounter = 0
         count = 0

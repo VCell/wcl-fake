@@ -148,10 +148,14 @@ class SpellHealLog(LogItem):
         self.player_id = self.items[0]
 
     def enhance(self, factor:float):
-
-        assert self.items[27] == self.items[28]
-        heal = int(self.items[27]) #治疗量（包含过量）
-        over_heal = int(self.items[29]) #过量治疗
+        # self.items[27] 排除吸收(血肉成灰)后的有效治疗
+        # self.items[28] 原始治疗量
+        # self.items[29] 过量治疗
+        # self.items[30] 吸收量
+        # self.items[31] 是否暴击
+        assert int(self.items[27]) + int(self.items[30]) == int(self.items[28])
+        heal = int(self.items[27]) 
+        over_heal = int(self.items[29])
         assert heal >= over_heal
         
         valuefactor = factor
@@ -170,7 +174,7 @@ class SpellHealLog(LogItem):
                 over_heal=0
         
         self.items[27] = str(int(heal))
-        self.items[28] = str(int(heal))
+        self.items[28] = str(int(heal) + int(self.items[30]))
         self.items[29] = str(int(over_heal))
         self.content = ','.join(self.items)
 
