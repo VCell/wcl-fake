@@ -4,7 +4,7 @@ job_config:
   - result_guid: Player-0000-00000000
     # 目标玩家的名字
     result_name: 目标玩家名
-    # 从模版中选取一个要替换的目标玩家的名字，以及GUID
+    # 从模版中选取一个要替换的目标玩家的名字，以及他的GUID
     source_name: 源玩家名
     source_guid: Player-0000-00000000
     #数值调整，每个boss的伤害和治疗数值都会乘以对应数值
